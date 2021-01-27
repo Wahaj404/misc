@@ -24,13 +24,13 @@ sudo apt-get install -y nodejs yarn
 sudo apt-get install -y postgresql
 
 # z-command
-curl https://raw.githubusercontent.com/rupa/z/master/z.sh | ~/.z-command/z.sh
+sudo curl -o ~/.z-command/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 
 # zsh and ohmyzsh
 sudo apt-get install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # custom .zshrc
-curl https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc | ~/.zshrc
+sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc 
 
 sudo apt-get autoremove -y
