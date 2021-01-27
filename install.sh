@@ -34,3 +34,5 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc 
 
 sudo apt-get autoremove -y
+
+# To change default shell to zsh, run 'chsh' and change to /bin/zsh
