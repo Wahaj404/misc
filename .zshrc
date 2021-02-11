@@ -18,12 +18,12 @@ alias zc=zcode
 
 function zexplorer() {
     # for wsl:
-    cur=$(pwd)
-    z $1
-    explorer.exe .
-    cd $cur
+    # cur=$(pwd)
+    # z $1
+    # explorer.exe .
+    # cd $cur
     # for true linux:
-    # xdg-open $(z $1 -e)
+    xdg-open $(z $1 -e)
 }
 alias ze=zexplorer
 
