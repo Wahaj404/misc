@@ -14,7 +14,7 @@ sudo snap install --classic code > /dev/null
 echo "Installing C/C++ toolchain"
 sudo apt-get install -qq gcc g++ gdb make > /dev/null
 
-echo "Installing python"
+echo "Installing python"    
 sudo apt-get install -qq python > /dev/null
 
 echo "Installing Node.js and yarn"
@@ -28,6 +28,7 @@ echo "Installing postgresql"
 sudo apt-get install -qq postgresql > /dev/null
 
 echo "Installing the z-command"
+mkdir ~/.z-command
 sudo curl -sS -o ~/.z-command/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 
 # echo "Installing zsh and ohmyzsh"
