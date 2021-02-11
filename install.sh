@@ -2,39 +2,44 @@
 
 # wget https://raw.githubusercontent.com/Wahaj404/rand/master/install.sh | bash -s
 
-sudo apt-get update && sudo apt-get upgrade -y
 
+echo "Fetching updates"
+sudo apt-get update -qq > /dev/null && sudo apt-get upgrade -qq > /dev/null
+
+echo "Installing curl and git"
 sudo apt-get install curl git
 
-# vscode
+echo "Installing vscode"
 sudo snap install --classic code
 
-# c/c++
-sudo apt-get install -y gcc g++ gdb make
+echo "Installing C/C++ toolchain"
+sudo apt-get install -qq gcc g++ gdb make > /dev/null
 
-# python
-sudo apt-get install -y python
+echo "Installing python"
+sudo apt-get install -qq python > /dev/null
 
-# nodejs and yarn
-sudo apt-get remove -y cmdtest
+echo "Installing Node.js and yarn"
+sudo apt-get remove -qq cmdtest > /dev/null
 curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get install -y nodejs yarn
+sudo apt-get install -qq nodejs yarn > /dev/null
 
-# postgresql
-sudo apt-get install -y postgresql
+echo "Installing postgresql"
+sudo apt-get install -qq postgresql > /dev/null
 
-# z-command
+echo "Installing the z-command"
 sudo curl -o ~/.z-command/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 
-# zsh and ohmyzsh
-sudo apt-get install -y zsh
+echo "Installing zsh and ohmyzsh"
+sudo apt-get install -qq zsh > /dev/null
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# custom .zshrc
+echo "Cloning custom .zshrc"
 sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc 
 
-sudo apt-get autoremove -y
+sudo apt-get autoremove -qq > /dev/null
 
-# To change default shell to zsh, run 'chsh' and change to /bin/zsh
+echo "Changing default shell to zsh"
+echo "Please enter /bin/zsh for shell path when prompted"
+chsh
