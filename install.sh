@@ -6,10 +6,10 @@ echo "Fetching updates"
 sudo apt-get update -qq > /dev/null && sudo apt-get upgrade -qq > /dev/null
 
 echo "Installing curl and git"
-sudo apt-get install curl git
+sudo apt-get install -qq curl git > /dev/null
 
 echo "Installing vscode"
-sudo snap install --classic code
+sudo snap install --classic code > /dev/null
 
 echo "Installing C/C++ toolchain"
 sudo apt-get install -qq gcc g++ gdb make > /dev/null
@@ -28,14 +28,14 @@ echo "Installing postgresql"
 sudo apt-get install -qq postgresql > /dev/null
 
 echo "Installing the z-command"
-sudo curl -o ~/.z-command/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+sudo curl -sS -o ~/.z-command/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 
-echo "Installing zsh and ohmyzsh"
-sudo apt-get install -qq zsh > /dev/null
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# echo "Installing zsh and ohmyzsh"
+# sudo apt-get install -qq zsh > /dev/null
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Cloning custom .zshrc"
-sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc
+sudo curl -sS -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc
 sed -i "s/dev/$(whoami)/g" ~/.zshrc # replaces dev with your username, for path to ~/.oh-my-zsh
 
 sudo apt-get autoremove -qq > /dev/null
