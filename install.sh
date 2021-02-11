@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# curl https://raw.githubusercontent.com/Wahaj404/rand/master/install.sh | bash -s
+# wget https://raw.githubusercontent.com/Wahaj404/rand/master/install.sh | bash -s
 
 sudo apt-get update && sudo apt-get upgrade -y
+
+sudo apt-get install curl git
 
 # vscode
 sudo snap install --classic code
