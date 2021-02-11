@@ -2,7 +2,6 @@
 
 # wget https://raw.githubusercontent.com/Wahaj404/rand/master/install.sh | bash -s
 
-
 echo "Fetching updates"
 sudo apt-get update -qq > /dev/null && sudo apt-get upgrade -qq > /dev/null
 
@@ -36,7 +35,8 @@ sudo apt-get install -qq zsh > /dev/null
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Cloning custom .zshrc"
-sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc 
+sudo curl -o ~/.zshrc https://raw.githubusercontent.com/Wahaj404/rand/master/.zshrc
+sed -i "s/dev/$(whoami)/g" ~/.zshrc # replaces dev with your username, for path to ~/.oh-my-zsh
 
 sudo apt-get autoremove -qq > /dev/null
 
